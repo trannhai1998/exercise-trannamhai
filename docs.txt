@@ -1,0 +1,183 @@
+- Layout{
+    + Mục đích sử dụng class container để tạo ra một vùng chữ nhật mà 
+    chiều rộng của nó thiết lập phụ thuộc vào kích thước màn hình hiện thị.
+    + Chiều rộng màn hình	        Độ rộng lớn của container	Ký hiệu nhận biết
+        576px (rất nhỏ)	                <576px	                    xs
+        ≥576px và < 768 (nhỏ)	        540px	                    sm
+        ≥768px và < 992px(trung bình)   720px	                    md
+        ≥992px và < 1200px (lớn)	    960px	                    lg
+        ≥1200px	                        1140px	                    xl
+    + 
+}
+- Gird{ 
+    
+}
+- Typography{
+
+}
+- Table{
+    <div class="container">
+         <h2>Basic Bootstrap Table</h2>
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>No</th>
+                  <th>Language</th>
+                  <th>Percent</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>1</td>
+                  <td>Java</td>
+                  <td>14.21%</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>C</td>
+                  <td>11.03%</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>C++</td>
+                  <td>5.60%</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      + Cell Color {
+            .table-primary
+            .table-secondary
+            .table-success
+            .table-danger
+            .table-warning
+            .table-info
+            .table-light
+            .table-dark
+            .table-muted
+            .table-white
+        + .table-bordered sẽ tạo ra viền (border) cho 4 cạnh của bảng, và tất cả các cạnh của tất cả các ô của bảng.
+        + Hoverable rows : {
+            + .table-hover
+            + 
+        }
+        +  Table .table-sm : {
+            if (dv <= sm(576px) ){
+                tabel.size = table.size.smaller();
+            }
+        }
+        + Responsive Table : {
+            <div class="table-responsive[-sm|-md|-lg|-xl]">
+            if (dv = [-sm|-md|-lg|-xl]){
+                scrollHorizontal.enable();
+            }
+            + example : .table-responsive-lg
+        }
+        + size Column table : {
+            style ="width: X%"
+        }
+        + colspan="2" : {
+            1 hàng chiếm 2 column 
+            <td colspan="2">1</td>
+        }
+        + <caption>List of users</caption>s
+      }
+}
+- Component{
+
+}
+- Alerts{
+    <div class="alert alert-success" role="alert">
+   <h4 class="alert-heading">Well done!</h4>
+   <p>Aww yeah, you successfully read this important alert message.
+      This example text is going to run a bit longer
+       so that you can see how spacing within an alert works with this kind of content.
+   </p>
+   <hr>
+   <p class="mb-0">Whenever you need to,
+       be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+}
+- Breadcrumb{
+
+}
+- Buttons{
+
+}
+- Card{
+    <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+}
+- Carousel{
+
+}
+- Dropdowns{
+    - Nav Dropdowns :{ 
+        <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+               Front-end
+               </a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Javascript</a>
+                  <a class="dropdown-item" href="#">Css</a>
+                  <a class="dropdown-item" href="#">Bootstrap</a>
+               </div>
+            </li>
+    }
+}
+- Forms{
+
+}
+- Modal{
+
+}
+- Navbar{
+      + Navigation Bar (Thanh điều hướng) là 
+        một phần của giao diện của giao diện người dùng, 
+        giúp cho người dùng có thể nhẩy tới các trang (page) khác nhau trong website.
+        + Brand/ Logo : {
+        . <a class="navbar-brand">
+        }
+        + Navbar & Form : {
+            <ul class="navbar-nav">
+                <form class="form-inline" action="/somepage">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </ul>
+        }
+
+}
+- Pagination{
+
+}
+- Spinners{
+
+}
+- Toasts{
+
+}
+- Utilities{
+
+}
+- Colors{
+
+}
+- Flex{
+
+}
+- Spacing{
+
+}
+- Text{
+
+}
+- Icons{
+
+}
