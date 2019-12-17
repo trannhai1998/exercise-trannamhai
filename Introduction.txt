@@ -1,0 +1,172 @@
+- Các Lệnh trong Create-React-App {
+    + Khỏi tạo Project :  create-react-app <Ten App > 
+    + Chạy Project : npm start
+    + npm test or yarn buil : chạy thử project ở chế độ tương tác kiểm tra các tệp thay đổi đã lưu chưa . 
+    + npm build or yarn build  : xây dựng app để Deploy.
+}
+- SPA và MPA {
+    + SPA : {
+        + Single-page Application là mọt ứng dụng hoạt động trên browser và không cần bắt buộc phải reload lại khi sử dụng.
+        + " Client Side Rendering " khi Client mới là người render ra từ những dòng HTML, CSS để hiển thị.
+        + Ưu Điểm : 
+            . SPA có thể thực hiện đẩy đủ các chức năng của một ứng dụng hiển thị phong cách "truyền thống".
+            . SPA nhanh, tất cả (HTML + CSS + JS) chỉ phải load một lần trong quá trình sử dụng. Chỉ có dữ liệu là được chuyển qua chuyển qua lại.
+            . Tăng tính tương tác giữa người dùng.
+            . Tìm kiếm, tính toán, xử lý nhanh hơn.
+        + Nhược Điểm : 
+            . Sử dụng ngôn ngữ Javascript nên vừa là ưu điểm vừa là nhược điểm nếu người lập trình xử lý 
+                không khéo. Ta rất dễ rơi vào "callback hell".
+            . Có qua nhiều sự lựa chọn nên ta không biết nên dùng cái nào cho dự án của mình.
+            . Đi kèm với sự linh hoạt trong thiết kế thì ta sẽ không có một quy chuẩn nhất định.
+            . Bên cạnh tối ưu cho sever, ta cần suy nghĩ tới việc tối ưu cho cả client.
+            . Lần load đầu sẽ cực kì nặng.
+            . Ảnh hưởng tới việc SEO ? 
+    }
+    + MPA : {
+        + Với MPA, chúng ta có một phong cách hiển thị rất "truyền thống" là mọi dữ liệu sẽ được 
+            render ra từ mã HTML, CSS và cả Javascript và trả lại về người dùng hay 
+            được gọi là " Server Side Rendering ".
+        + mỗi lần request, reponse thì cả trang web sẽ phải reload lại trang dù là nhỏ nhất . 
+        + Ưu Điểm : 
+            . Hoạt động tốt trên mọi trình duyệt , SPa thì trình duyệt cần hỗ trợ JS .
+            . Tốt cho seo ? 
+        + Nhược Điểm : {
+            . Tốc độ thực hiện sẽ chậm nếu thao tác nhiều hoặc dữ liệu nhiều . 
+
+        }
+    }
+}
+- React : {
+    + React là một thư viện Javascript giúp bạn xây dựng tầng Views (thường được xem như là chữ V trong mô hình MVC). 
+    + React có thể xây dựng website hoàn toàn sử dụng Javascript (để thao tác với HTML)
+        , được tăng cường bởi VirtualDOM
+    + Với React, chúng ta không cần lo lắng về cách thức tạo ra view mới
+        , React sẽ kiểm soát những thay đổi này và tự động update views khi cần thiết.
+    +React lấy một snapshot của Virtual DOM (có thể hiểu là bản ghi trạng thái ngay lúc đó) ngay trước khi 
+    áp dụng bất kỳ bản cập nhật nào. Sau đó, nó sử dụng snapshot này để so sánh 
+    với một Virtual DOM được cập nhật trước khi thực hiện các thay đổi.
+    + Ưu Điểm : {
+       . Reactjs tạo ra cho chính nó DOM ảo – nơi mà các component thực sự tồn tại trên đó.
+       . Reactjs giúp việc viết các đoạn code JS dễ dàng hơn :Ta có thể them vào các đoạn HTML vào trong hàm render mà 
+        không cần phải nối chuỗi. Đây là đặc tính thú vị của Reactjs.
+       . Nó có nhiều công cụ phát triển : React develope Tool,...
+    + Nhược Điểm : 
+        . Reactjs chỉ phục vụ cho tầng View. React chỉ 
+            là View Library nó không phải là một MVC framework như những framework khác
+            , Vì thế React sẽ không có phần Model và Controller, mà phải kết hợp với các thư viện khác : Redux,...
+        . Tích hợp Reactjs vào các framework MVC truyền thống yêu cầu cần phải cấu hình lại.
+    }
+}
+- Native DOM : {
+    + HTML DOM được cấu trúc dạng cây.
+    + Việc cập nhật các node trong DOM không mất nhiều thời gian hơn việc thiết lập một thuộc tính trên một đối tượng JavaScript . 
+    + Điều chậm ở đây là layout mà các trình duyệt phải làm bất cứ khi nào DOM thay đổi. Mỗi khi
+        DOM thay đổi, trình duyệt cần phải tính toán lại CSS, thực hiện dựng lại trang web.
+    + Xem xét một DOM được tạo bởi hàng nghìn div, Có quá nhiều phương thức để xử lý các event click, submit, ... 
+}
+- Shadow DOM : {
+    + Virtual-DOM giống một bản vẽ, nó chứa toàn bộ các thông tin cần thiết để 
+        tạo nên một DOM, chúng ta có thể tạo, sửa, thao tác trên đó mà không cần tác động trực tiếp vào các phần tử DOM trên View . 
+    + Tại sao dùng Dom : {
+        . Tốc độ : {
+            hi Virtual-DOM thay đổi, chúng ta không cần thao tác trực tiếp với DOM trên View mà vẫn phản ánh được sự thay đổi đó. 
+            Do Virtual-DOM vừa đóng vai trò là Model, vừa đóng vai trò là View nên mọi sự thay đổi 
+            trên Model đã kéo theo sự thay đổi trên View và ngược lạ . 
+        }
+        . 
+    }
+}
+- Virtual DOM : {
+    + có đặc tính là Isolated DOM, nghĩa là cô lập với thế giới bên ngoài. 
+    Các style sheet hay javascript từ bên ngoài không thể tác động vào trong Shadow DOM được và ngược lại .
+    +  Chúng ta không bao giờ có thể thay đổi các thành phần, cũng như style của chúng cũng không chịu bất kỳ ảnh hưởng nào từ bên ngoài. 
+}
+- Cấu trúc cơ bản của XML : {
+    + Một tài liệu XML được tạo bởi các thẻ (XML element) và chúng có thể 
+    được tổ chức theo một cấu trúc cây thư mục, điều này còn có thể gọi là Nested  Elements trong XML.
+    + Cấu trúc cây : {
+        <?xml version="1.0" encoding="UTF-8"?>
+            <company>
+                <employee>
+                    <firstname>
+                        Tanmay
+                    </firstname>
+                    <lastname>
+                        Patil
+                    </lastname>
+                    <contactno>
+                        123456789
+                    </contactno>
+                    <family>
+                        <person>
+                            <name>Nguyễn Sơn</name>
+                            <relationship>Cha</relationship>
+                        </person>
+                        <person>
+                            <name>Lê Thị Sửu</name>
+                            <relationship>Mẹ</relationship>
+                        </person>
+                        <person>
+                            <name>Nguyễn Văn Trường</name>
+                            <relationship>Anh trai</relationship>
+                        </person>
+                    </family>
+                </employee>
+            </company>
+    }
+}
+- JSX : {
+    + JSX (viết tắt của cụm từ JavaScript XML) là một loại cú pháp mở rộng dành cho ngôn ngữ JavaScript viết theo kiểu XML.
+    + JSX cung cấp cú pháp thuận tiện 
+    thay cho React.createElement(). Trong ReactJS thì JSX thường được dùng để khai báo phần tử hoặc trong khi render một component.
+    **** Giống như XML, các thẻ JSX có name, attribute, và children : 
+    + Dùng JSX Trong React Element : {
+        ví dụ : 
+        const element = <div class="example">Welcome to JSX</div>;
+        tương đưowng : 
+        --> React.createElement(
+                "div",
+                {className: "example"},
+                "Welcome to JSX"
+            };
+        .  ta định nghĩa một Class container thì ta không viết là:
+            <div class="container">...</div> mà phải viết là <div className="container">...</div>
+        . JSX cũng là 1 biểu thức : ví dụ :
+            Sau khi biên dịch, biểu thức JSX trở thành các đối tượng JavaScript thông thường. Điều này có nghĩa là bạn 
+            có thể sử dụng JSX bên trong các câu lệnh if và cho các vòng lặp, gán nó cho các biến, 
+            chấp nhận nó như các đối số, và trả về nó từ các hàm:
+            function getGreeting(user) {
+                if (user) {
+                    return <h1>Hello, {formatName(user)}!</h1>;
+                }
+                return <h1>Hello, Stranger.</h1>;
+            }
+        .const element = <img src={user.avatarUrl}></img>;
+        . JSX có thể chứa children
+            const element = (
+                <div>
+                    <h1>Hello!</h1>
+                    <h2>Good to see you here.</h2>
+                </div>
+            );
+    + Tại Sao Lại dùng JSX : {
+        . Thứ nhất, JSX với cú pháp gần giống XML.
+        . Thứ 2, JSX không làm thay đổi ngữ nghĩa của Javascript.
+        . Thứ 3, với cách viết gần với các thẻ HTML, nó giúp những developers thông thường (ví dụ như các designer) 
+        có thể hiểu được một cách dễ dàng, từ đó có thể viết hoặc sửa code mà không gặp nhiều khó khăn.
+    }
+    }
+    
+}
+- React render element sang DOM : {
+        + Bắt đầu từ gốc : <div id="root"></div> .
+        + Nếu bạn kết hợp React vào trong một ứng dụng đã tồn tại, 
+        bạn có thể có nhiều “nốt” (node) DOM gốc “bị cô lập” (isolated) như bạn muốn. 
+        + Để render một React element vào bên trong một “nốt” (node) DOM gốc, truyền tất cả vào ReactDOM.render():
+
+    }
+- Vì sao lại cần virtual dom trong khi đã có native DOM : {
+        
+    + Khi một ứng dụng cần nhiều thao tác người dùng thì việc hoạt động của native dom là quá mất nhiều thoi gian . Nhưng 
+        với Virtual dom , việc thao tác trên ứng dụng chỉ thay đổi các phần có tương tác mà không reload lại trang . 
+}
